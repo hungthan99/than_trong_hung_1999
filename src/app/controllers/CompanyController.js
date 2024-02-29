@@ -1,7 +1,7 @@
 const Company = require("../models/Company");
 
 class CompanyController {
-  // [GET] /geos
+  // [GET] /companies
   showAll(req, res, next) {
     Company.find({})
       .then((companies) =>
@@ -14,7 +14,7 @@ class CompanyController {
       .catch(next);
   }
 
-  // [GET] /geos/:id
+  // [GET] /companies/:id
   show(req, res, next) {
     Company.findById(req.params.id)
       .then((company) =>
@@ -27,7 +27,7 @@ class CompanyController {
       .catch(next);
   }
 
-  // [POST] /geos
+  // [POST] /companies
   create(req, res, next) {
     const company = new Company(req.body);
     company
@@ -42,7 +42,7 @@ class CompanyController {
       .catch(next);
   }
 
-  // [PUT] /geos/:id
+  // [PUT] /companies/:id
   update(req, res, next) {
     Company.updateOne({ _id: req.params.id }, req.body)
       .then(() =>
@@ -55,7 +55,7 @@ class CompanyController {
       .catch(next);
   }
 
-  // [DELETE] /geos/:id
+  // [DELETE] /companies/:id
   delete(req, res, next) {
     Company.findByIdAndDelete(req.params.id)
       .then(() =>
