@@ -15,6 +15,7 @@ db.connect()
 
 const port = process.env.PORT || 3000;
 
+// Routing
 route(app)
 
 app.listen(port, () => {
