@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 function User() {
   const [users, setUsers] = useState([])
   useEffect(() => {
-    fetch('https://jsonplaceholder.typicode.com/users')
+    fetch('http://localhost:3001/users')
       .then((res) => {
         return res.json();
       })

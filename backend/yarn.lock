@@ -47,6 +47,11 @@
   "resolved" "https://registry.npmjs.org/array-flatten/-/array-flatten-1.1.1.tgz"
   "version" "1.1.1"
 
+"async@^3.2.5":
+  "integrity" "sha512-baNZyqaaLhyLVKm/DlvdW051MSgO6b8eVfIezl9E5PqWxFgzLm/wQntEW4zOytVburDEr0JlALEpdOFwvErLsg=="
+  "resolved" "https://registry.npmjs.org/async/-/async-3.2.5.tgz"
+  "version" "3.2.5"
+
 "balanced-match@^1.0.0":
   "integrity" "sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw=="
   "resolved" "https://registry.npmjs.org/balanced-match/-/balanced-match-1.0.2.tgz"
@@ -423,6 +428,11 @@
   "resolved" "https://registry.npmjs.org/kareem/-/kareem-2.5.1.tgz"
   "version" "2.5.1"
 
+"lodash@^4.17.21":
+  "integrity" "sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg=="
+  "resolved" "https://registry.npmjs.org/lodash/-/lodash-4.17.21.tgz"
+  "version" "4.17.21"
+
 "lru-cache@^6.0.0":
   "integrity" "sha512-Jo6dJ04CmSjuznwJSS3pUeWmd/H0ffTlkXXgwZi+eq1UCmqQwCh+eLsYOYCwY991i2Fah4h1BEMCx4qThGbsiA=="
   "resolved" "https://registry.npmjs.org/lru-cache/-/lru-cache-6.0.0.tgz"
@@ -491,7 +501,15 @@
     "bson" "^6.2.0"
     "mongodb-connection-string-url" "^3.0.0"
 
-"mongoose@^8.2.0":
+"mongoose-sequence@^6.0.1":
+  "integrity" "sha512-uXnLCW9pu2V49Xw8BmdXdeRugd2mv+ntu3nT2Bbm33pNRmmvHE2GKA+8BASKoQt960McLX4VL78wkb492f6MoQ=="
+  "resolved" "https://registry.npmjs.org/mongoose-sequence/-/mongoose-sequence-6.0.1.tgz"
+  "version" "6.0.1"
+  dependencies:
+    "async" "^3.2.5"
+    "lodash" "^4.17.21"
+
+"mongoose@^8.2.0", "mongoose@>=5":
   "integrity" "sha512-la93n6zCYRbPS+c5N9oTDAktvREy5OT9OCljp1Tah0y3+p8UPMTAoabWaLZMdzYruOtF9/9GRf6MasaZjiZP1A=="
   "resolved" "https://registry.npmjs.org/mongoose/-/mongoose-8.2.0.tgz"
   "version" "8.2.0"

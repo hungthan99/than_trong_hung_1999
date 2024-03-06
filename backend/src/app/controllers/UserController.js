@@ -6,11 +6,7 @@ class UserController {
   showAll(req, res, next) {
     User.find({}).populate('address').populate('company')
       .then((users) =>
-        res.status(200).json({
-          status: 200,
-          message: "Get all users successfully!",
-          payload: users,
-        })
+        res.status(200).json(users)
       )
       .catch(next);
   }
