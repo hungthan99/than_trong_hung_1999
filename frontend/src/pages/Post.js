@@ -3,7 +3,8 @@ import { useEffect, useState } from "react";
 function Post() {
   const [posts, setPosts] = useState([]);
   useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/posts")
+    // fetch('https://than-trong-hung-1999.onrender.com/posts')
+    fetch('http://localhost:3001/posts/')
       .then((res) => {
         return res.json();
       })
@@ -23,7 +24,7 @@ function Post() {
       <tbody>
         {posts.map((post, index) => (
           <tr key={index}>
-            <td>{post.id}</td>
+            <td>{post.post_id}</td>
             <td>{post.title}</td>
             <td>{post.body}</td>
           </tr>

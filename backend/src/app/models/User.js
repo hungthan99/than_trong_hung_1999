@@ -13,6 +13,6 @@ const User = new Schema({
   company: { type: mongoose.Schema.Types.ObjectId, ref: "Company" },
 });
 
-User.plugin(AutoIncrement, { inc_field: 'id' });
+User.plugin(AutoIncrement, { inc_field: 'user_id' });
 
 module.exports = mongoose.model("User", User);

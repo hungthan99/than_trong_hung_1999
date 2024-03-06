@@ -5,11 +5,7 @@ class AddressController {
   showAll(req, res, next) {
     Address.find({}).populate('geo')
       .then((addresses) =>
-        res.status(200).json({
-          status: 200,
-          message: "Get all addresses successfully!",
-          payload: addresses,
-        })
+        res.status(200).json(addresses)
       )
       .catch(next);
   }
@@ -18,11 +14,7 @@ class AddressController {
   show(req, res, next) {
     Address.findById(req.params.id).populate('geo')
       .then((address) =>
-        res.status(200).json({
-          status: 200,
-          message: "Get address by id successfully!",
-          payload: address,
-        })
+        res.status(200).json(address)
       )
       .catch(next);
   }

@@ -15,11 +15,7 @@ class UserController {
   show(req, res, next) {
     User.findById(req.params.id).populate('address').populate('company')
       .then((user) =>
-        res.status(200).json({
-          status: 200,
-          message: "Get user by id successfully!",
-          payload: user,
-        })
+        res.status(200).json(user)
       )
       .catch(next);
   }

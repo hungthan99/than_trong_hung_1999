@@ -5,11 +5,7 @@ class PostController {
   showAll(req, res, next) {
     Post.find({})
       .then((posts) =>
-        res.status(200).json({
-          status: 200,
-          message: "Get all posts successfully!",
-          payload: posts,
-        })
+        res.status(200).json(posts)
       )
       .catch(next);
   }
@@ -18,11 +14,7 @@ class PostController {
   show(req, res, next) {
     Post.findById(req.params.id)
       .then((post) =>
-        res.status(200).json({
-          status: 200,
-          message: "Get post by id successfully!",
-          payload: post,
-        })
+        res.status(200).json(post)
       )
       .catch(next);
   }

@@ -5,11 +5,7 @@ class GeoController {
   showAll(req, res, next) {
     Geo.find({})
       .then((geos) =>
-        res.status(200).json({
-          status: 200,
-          message: "Get all geographies successfully!",
-          payload: geos,
-        })
+        res.status(200).json(geos)
       )
       .catch(next);
   }
@@ -18,11 +14,7 @@ class GeoController {
   show(req, res, next) {
     Geo.findById(req.params.id)
       .then((geo) =>
-        res.status(200).json({
-          status: 200,
-          message: "Get geography by id successfully!",
-          payload: geo,
-        })
+        res.status(200).json(geo)
       )
       .catch(next);
   }

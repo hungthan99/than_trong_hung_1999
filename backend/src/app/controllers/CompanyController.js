@@ -5,11 +5,7 @@ class CompanyController {
   showAll(req, res, next) {
     Company.find({})
       .then((companies) =>
-        res.status(200).json({
-          status: 200,
-          message: "Get all company successfully!",
-          payload: companies,
-        })
+        res.status(200).json(companies)
       )
       .catch(next);
   }
@@ -18,11 +14,7 @@ class CompanyController {
   show(req, res, next) {
     Company.findById(req.params.id)
       .then((company) =>
-        res.status(200).json({
-          status: 200,
-          message: "Get company by id successfully!",
-          payload: company,
-        })
+        res.status(200).json(company)
       )
       .catch(next);
   }

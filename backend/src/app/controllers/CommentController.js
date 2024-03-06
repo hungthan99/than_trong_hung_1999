@@ -5,11 +5,7 @@ class CommentController {
   showAll(req, res, next) {
     Comment.find({})
       .then((comments) =>
-        res.status(200).json({
-          status: 200,
-          message: "Get all comments successfully!",
-          payload: comments,
-        })
+        res.status(200).json(comments)
       )
       .catch(next);
   }
@@ -18,11 +14,7 @@ class CommentController {
   show(req, res, next) {
     Comment.findById(req.params.id)
       .then((comment) =>
-        res.status(200).json({
-          status: 200,
-          message: "Get comment by id successfully!",
-          payload: comment,
-        })
+        res.status(200).json(comment)
       )
       .catch(next);
   }

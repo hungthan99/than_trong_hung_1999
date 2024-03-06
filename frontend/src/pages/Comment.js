@@ -3,7 +3,8 @@ import { useEffect, useState } from "react";
 function Comment() {
   const [comments, setComments] = useState([]);
   useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/comments")
+    // fetch('https://than-trong-hung-1999.onrender.com/comments')
+    fetch('http://localhost:3001/comments/')
       .then((res) => {
         return res.json();
       })
@@ -24,7 +25,7 @@ function Comment() {
       <tbody>
       {comments.map((comment, index) => (
           <tr key={index}>
-            <td>{comment.id}</td>
+            <td>{comment.comment_id}</td>
             <td>{comment.name}</td>
             <td>{comment.email}</td>
             <td>{comment.body}</td>

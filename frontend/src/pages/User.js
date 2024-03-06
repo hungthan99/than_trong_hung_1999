@@ -3,7 +3,8 @@ import { useEffect, useState } from "react";
 function User() {
   const [users, setUsers] = useState([])
   useEffect(() => {
-    fetch('http://localhost:3001/users')
+    // fetch('https://than-trong-hung-1999.onrender.com/users')
+    fetch('http://localhost:3001/users/')
       .then((res) => {
         return res.json();
       })
@@ -26,7 +27,7 @@ function User() {
       <tbody>
         {users.map((user, index) => (
           <tr key={index}>
-            <td>{user.id}</td>
+            <td>{user.user_id}</td>
             <td>{user.name}</td>
             <td>{user.username}</td>
             <td>{user.email}</td>
