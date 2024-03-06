@@ -3,8 +3,8 @@ import { useEffect, useState } from "react";
 function Comment() {
   const [comments, setComments] = useState([]);
   useEffect(() => {
-    // fetch('https://than-trong-hung-1999.onrender.com/comments')
-    fetch('http://localhost:3001/comments/')
+    fetch('https://than-trong-hung-1999.onrender.com/comments') // Using public api
+    // fetch('http://localhost:3001/comments/') // Using private api
       .then((res) => {
         return res.json();
       })

@@ -3,8 +3,8 @@ import { useEffect, useState } from "react";
 function User() {
   const [users, setUsers] = useState([])
   useEffect(() => {
-    // fetch('https://than-trong-hung-1999.onrender.com/users')
-    fetch('http://localhost:3001/users/')
+    fetch('https://than-trong-hung-1999.onrender.com/users') // Using public api
+    // fetch('http://localhost:3001/users/') // Using private api
       .then((res) => {
         return res.json();
       })

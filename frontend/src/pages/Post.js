@@ -3,8 +3,8 @@ import { useEffect, useState } from "react";
 function Post() {
   const [posts, setPosts] = useState([]);
   useEffect(() => {
-    // fetch('https://than-trong-hung-1999.onrender.com/posts')
-    fetch('http://localhost:3001/posts/')
+    fetch('https://than-trong-hung-1999.onrender.com/posts') // Using public api
+    // fetch('http://localhost:3001/posts/') // Using private api
       .then((res) => {
         return res.json();
       })
