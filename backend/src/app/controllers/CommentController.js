@@ -3,9 +3,22 @@ const Comment = require("../models/Comment");
 class CommentController {
   // [GET] /comments
   showAll(req, res, next) {
-    Comment.find({})
+    Comment.find({}).populate('post')
       .then((comments) =>
-        res.status(200).json(comments)
+      {
+        const items = []
+        for(const i in comments) {
+          const item = {
+            id: comments[i].comment_id,
+            name: comments[i].name,
+            email: comments[i].email,
+            body: comments[i].body,
+            post: comments[i].post.title,
+          }
+          items.push(item)
+        }
+        res.status(200).json(items)
+      }
       )
       .catch(next);
   }

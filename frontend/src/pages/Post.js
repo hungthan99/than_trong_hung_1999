@@ -19,14 +19,16 @@ function Post() {
           <th scope="col">ID</th>
           <th scope="col">Title</th>
           <th scope="col">Body</th>
+          <th scope="col">User</th>
         </tr>
       </thead>
       <tbody>
         {posts.map((post, index) => (
           <tr key={index}>
-            <td>{post.post_id}</td>
+            <td>{post.id}</td>
             <td>{post.title}</td>
             <td>{post.body}</td>
+            <td>{post.user}</td>
           </tr>
         ))}
       </tbody>

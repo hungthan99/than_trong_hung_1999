@@ -20,15 +20,17 @@ function Comment() {
           <th scope="col">Name</th>
           <th scope="col">Email</th>
           <th scope="col">Body</th>
+          <th scope="col">Post</th>
         </tr>
       </thead>
       <tbody>
       {comments.map((comment, index) => (
           <tr key={index}>
-            <td>{comment.comment_id}</td>
+            <td>{comment.id}</td>
             <td>{comment.name}</td>
             <td>{comment.email}</td>
             <td>{comment.body}</td>
+            <td>{comment.post}</td>
           </tr>
         ))}
       </tbody>

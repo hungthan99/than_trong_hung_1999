@@ -4,18 +4,27 @@ class PostController {
   // [GET] /posts
   showAll(req, res, next) {
     Post.find({})
-      .then((posts) =>
-        res.status(200).json(posts)
-      )
+      .populate("user")
+      .then((posts) => {
+        const items = []
+        for(const i in posts) {
+          const item = {
+            id: posts[i].post_id,
+            title: posts[i].title,
+            body: posts[i].body,
+            user: posts[i].user.username,
+          }
+          items.push(item)
+        }
+        res.status(200).json(items)
+      })
       .catch(next);
   }
 
   // [GET] /posts/:id
   show(req, res, next) {
     Post.findById(req.params.id)
-      .then((post) =>
-        res.status(200).json(post)
-      )
+      .then((post) => res.status(200).json(post))
       .catch(next);
   }
 
