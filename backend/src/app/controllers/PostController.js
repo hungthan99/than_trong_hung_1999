@@ -6,17 +6,15 @@ class PostController {
     Post.find({})
       .populate("user")
       .then((posts) => {
-        const items = []
-        for(const i in posts) {
-          const item = {
-            id: posts[i].post_id,
-            title: posts[i].title,
-            body: posts[i].body,
-            user: posts[i].user.username,
-          }
-          items.push(item)
-        }
-        res.status(200).json(items)
+        const items = posts.map((post) => {
+          return {
+            id: post.post_id,
+            title: post.title,
+            body: post.body,
+            user: post.user.username,
+          };
+        });
+        res.status(200).json(items);
       })
       .catch(next);
   }

@@ -3,32 +3,27 @@ const Comment = require("../models/Comment");
 class CommentController {
   // [GET] /comments
   showAll(req, res, next) {
-    Comment.find({}).populate('post')
-      .then((comments) =>
-      {
-        const items = []
-        for(const i in comments) {
-          const item = {
-            id: comments[i].comment_id,
-            name: comments[i].name,
-            email: comments[i].email,
-            body: comments[i].body,
-            post: comments[i].post.title,
-          }
-          items.push(item)
-        }
-        res.status(200).json(items)
-      }
-      )
+    Comment.find({})
+      .populate("post")
+      .then((comments) => {
+        const items = comments.map((comment) => {
+          return {
+            id: comment.comment_id,
+            name: comment.name,
+            email: comment.email,
+            body: comment.body,
+            post: comment.post.title,
+          };
+        });
+        res.status(200).json(items);
+      })
       .catch(next);
   }
 
   // [GET] /comments/:id
   show(req, res, next) {
     Comment.findById(req.params.id)
-      .then((comment) =>
-        res.status(200).json(comment)
-      )
+      .then((comment) => res.status(200).json(comment))
       .catch(next);
   }
 

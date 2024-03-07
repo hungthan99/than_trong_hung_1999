@@ -4,19 +4,33 @@ const Geo = require("../models/Geo");
 class UserController {
   // [GET] /users
   showAll(req, res, next) {
-    User.find({}).populate('address').populate('company')
-      .then((users) =>
-        res.status(200).json(users)
-      )
+    User.find({})
+      .populate("address")
+      .populate("company")
+      .then((users) => {
+        const items = users.map((user) => {
+          return {
+            id: user.user_id,
+            name: user.name,
+            username: user.username,
+            email: user.email,
+            phone: user.phone,
+            website: user.website,
+            address: user.address,
+            company: user.company,
+          };
+        });
+        res.status(200).json(items);
+      })
       .catch(next);
   }
 
   // [GET] /users/:id
   show(req, res, next) {
-    User.findById(req.params.id).populate('address').populate('company')
-      .then((user) =>
-        res.status(200).json(user)
-      )
+    User.findById(req.params.id)
+      .populate("address")
+      .populate("company")
+      .then((user) => res.status(200).json(user))
       .catch(next);
   }
 
