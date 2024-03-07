@@ -27,7 +27,7 @@ function User() {
       <tbody>
         {users.map((user, index) => (
           <tr key={index}>
-            <td>{user.user_id}</td>
+            <td>{user.id}</td>
             <td>{user.name}</td>
             <td>{user.username}</td>
             <td>{user.email}</td>
