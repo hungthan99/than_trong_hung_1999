@@ -1,5 +1,4 @@
 const User = require("../models/User");
-const Geo = require("../models/Geo");
 
 class UserController {
   // [GET] /users
